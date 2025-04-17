@@ -1,0 +1,808 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #000;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Navigation */
+.navbar {
+    padding: 20px 0;
+    position: relative;
+    z-index: 100;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+/* Hero Section with Precise Geometric Shapes */
+.hero {
+    background-color: #f5f5f5;
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+    min-height: 750px; /* Match the wireframe height */
+}
+
+/* Circles */
+
+
+.circle-solid-top-left {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 20%;
+    left: 18%;
+    z-index: 1;
+}
+
+.circle-solid-top-right {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 25%;
+    right: 25%;
+    z-index: 1;
+}
+
+
+
+.circle-outline-right {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    top: 50%;
+    right: 5%;
+    z-index: 1;
+}
+
+/* Squares and Triangles */
+.square-top-right {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    top: 10%;
+    right: 10%;
+    z-index: 1;
+}
+
+
+
+.triangle-outline-right1 {
+   position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 150px 150px 0;
+    border-color: transparent #000 transparent transparent;
+    top: 30%;
+    right:2%;
+    z-index: 1;
+}
+
+.triangle-outline-right2 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 150px 150px 0 0; /* Adjust size: 150px for height and width */
+    border-color: transparent #000000 #000 transparent; /* Black outline */
+    background: transparent; /* Ensure no fill */
+    top: 30%;
+    right: 10%;
+    z-index: 1;
+}
+
+.circle-outline-left {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    top: 35%;
+    left: -4%;
+    z-index: 1;
+}
+
+.black-triangle-left {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #000; /* Warna latar belakang */
+    clip-path: polygon(0 0, 100% 0, 0 100%); /* Membuat segitiga kiri atas */
+    top: 35%;
+    left: 23%;
+    z-index: 1;
+}
+.triangle-outline-left1 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #000; /* Warna latar belakang */
+    clip-path: polygon(0 0, 100% 0, 0 100%); /* Membuat segitiga kiri atas */
+    top: 55%;
+    left: 15%;
+    z-index: 1;
+}
+
+.triangle-outline-left2 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    top: 75%;
+    left: 7%;
+    z-index: 1;
+}
+
+.triangle-outline-left2::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 150px 150px 0;
+    border-color: transparent #000 #000 transparent;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.square-bottom-left {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    top: 75%;
+    left: -1%;
+    z-index: 1;
+}
+
+/* Content Styling */
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.content-placeholder {
+    width: 100%;
+    max-width: 800px;
+    height: 180px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding-top: 10px;
+    margin: 0 auto 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.placeholder-dots {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.placeholder-dots span {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.testimonial {
+    background-color: #f5f5f5;
+    position: relative;
+    padding: 20px 0;
+    overflow: hidden;
+    min-height: 150px;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text is centered */
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    margin-bottom: 20px; /* Increase spacing below blockquote */
+    max-width: 100%; /* Optional: limit width for readability */
+   
+}
+
+.circle-solid-bottom-left {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 50%;
+    bottom: 35%; /* Adjust to position between blockquote and author */
+    left: 5%;
+    z-index: 1;
+}
+
+.circle-solid-bottom-right {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 50%;
+    bottom: 35%; /* Adjust to position between blockquote and author */
+    left: 0%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.author {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 20px; /* Increase spacing above author */
+    max-width: 600px; /* Optional: match blockquote width */
+}
+
+/* Dark Hero Section */
+.dark-hero {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 0;
+}
+
+.dark-hero-content {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 40px;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 50%; /* Ensure the text takes up roughly half the space */
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.author-avatar {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* Container for the image placeholders */
+.image-placeholders {
+    flex: 1;
+    position: relative;
+    height: 300px; /* Adjust height to fit both placeholders */
+}
+
+/* First placeholder (top, white) */
+.image-placeholder1 {
+    position: absolute;
+    width: 450px;
+    height: 250px;
+    background-color: #fff;
+    top: 0; /* Align with the top of the container */
+    right: 0; /* Align to the right */
+}
+
+/* Second placeholder (bottom, grayish) */
+.image-placeholder2 {
+    position: absolute;
+    width: 450px;
+    height: 250px;
+    background-color: #c3bfbf; /* Matches the grayish color in the image */
+    top: 50px; /* Adjusted offset to match the image */
+    right: 50px; /* Slightly offset to the left for the staggered effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dark-hero-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .author-info {
+        justify-content: center;
+    }
+
+    .image-placeholders {
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .image-placeholder1 {
+        width: 300px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .image-placeholder2 {
+        width: 300px;
+        top: 120px;
+        right: 50%;
+        transform: translateX(40%);
+    }
+}
+
+/* Features Section */
+.features {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+}
+
+.features-header {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto 60px;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-icon {
+    background-color: #000;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.icon-placeholder {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+}
+
+.see-more {
+    margin-top: auto;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.see-more:hover {
+    text-decoration: underline;
+}
+
+/* Feature Split Section */
+.feature-split {
+    display: flex;
+    height: 1000px; /* Adjust height to fit the design */
+}
+
+.feature-image {
+    flex: 2;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.image-box {
+    width: 60%;
+    height: 60%;
+    background-color: #fff;
+}
+
+.feature-text {
+    flex: 2;
+    background-color: #f5f5f5;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* CTA Form Section */
+.cta-section {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+}
+
+.cta-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-form h2 {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Footer with Geometric Shapes */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.geometric-footer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.circle-footer-left {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    top: 30%;
+    left: 15%;
+}
+
+.triangle-footer-left {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    bottom: 20%;
+    left: 25%;
+}
+
+.circle-footer-right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    bottom: 20%;
+    right: 15%;
+}
+
+.triangle-footer-right {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    top: 30%;
+    right: 20%;
+}
+
+.square-footer {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    bottom: 0;
+    right: 0;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #aaa;
+    position: relative;
+    z-index: 1;
+}
+
+.copyright a {
+    color: #aaa;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 1440px) {
+    /* Adjust positions for smaller screens while maintaining proportions */
+    .circle-outline-left {
+        left: 3%;
+    }
+    
+    .square-top-right {
+        right: 5%;
+    }
+    
+    .triangle-outline-right {
+        right: 5%;
+    }
+    
+    .circle-outline-right {
+        right: 3%;
+    }
+}
+
+@media (max-width: 992px) {
+    .feature-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Scale down shapes for medium screens */
+    .circle-outline-left,
+    .circle-outline-right {
+        transform: scale(0.8);
+    }
+    
+    .square-top-right {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .triangle-outline-right {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .dark-hero-content {
+        flex-direction: column;
+    }
+    
+    .feature-split {
+        flex-direction: column;
+    }
+    
+    .feature-image, .feature-text {
+        padding: 40px 20px;
+    }
+    
+    /* Adjust shapes for mobile */
+    .circle-solid-top-right,
+    .circle-solid-bottom-left {
+        display: none;
+    }
+    
+    .circle-outline-left {
+        width: 80px;
+        height: 80px;
+        top: 15%;
+    }
+    
+    .square-top-right {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .triangle-outline-right {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    /* Further simplify shapes for small mobile */
+    .circle-outline-right,
+    .black-triangle-left {
+        display: none;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding: 60px 0;
+    }
+    
+    .content-placeholder {
+        height: 150px;
+    }
+}
