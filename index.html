@@ -9,18 +9,71 @@
     <link rel="stylesheet" href="grid-overlay.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Add this CSS to the head section for better shape rendering -->
+<style>
+  /* Add z-index to ensure content is above shapes */
+  .hero-content, .content-placeholder {
+    position: relative;
+    z-index: 5;
+  }
+  
+  /* Ensure shapes don't interfere with text readability */
+  .hero-content h1, .hero-content p {
+    text-shadow: 0 0 10px rgba(245, 245, 245, 0.8);
+  }
+  
+  /* Make sure shapes scale properly but maintain position */
+  .circle-solid-top-left,
+  .circle-solid-top-right,
+  .circle-outline-right,
+  .square-top-right,
+  .triangle-outline-right1,
+  .triangle-outline-right2,
+  .circle-outline-left,
+  .black-triangle-left,
+  .triangle-outline-left1,
+  .triangle-outline-left2,
+  .square-bottom-left {
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* Add subtle animation to shapes */
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.02); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  
+  /* Apply animation to specific shapes */
+  .circle-outline-left {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .circle-outline-right {
+    animation: float 7s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .square-top-right {
+    animation: float 9s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+</style>
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">LOREM</div>
+            <div class="logo">EConomist Assistant</div>
             <div class="nav-links">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                <a href="#">Link 4</a>
+                <a href="#">About</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact</a>
+                <a href="#">Blog</a>
                 <a href="#" class="btn-outline">Sign Up</a>
             </div>
             <div class="menu-toggle">
@@ -53,10 +106,10 @@
 
             <!-- Content area -->
             <div class="hero-content">
-                <h1>Your Best Value Proposition</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-                <button class="btn-primary">Get started</button>
+                <h1>Belajar Mengelola Keuangan Anda</h1>
+                <p>Pelajari cara mengatur anggaran, manajemen keuangan pribadi, dan strategi investasi untuk masa depan finansial yang lebih baik.</p>
+                <button class="btn-primary">Mulai Belajar</button>
+
             </div>
 
             <div class="content-placeholder">
@@ -70,68 +123,99 @@
     </section>
 
     <div class="testimonial">
-        <blockquote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."</blockquote>
+        <blockquote>
+            "The market can remain irrational longer than you can remain solvent." 
+        </blockquote>
         <div class="circle-solid-bottom-left"></div>
-        <div class="circle-solid-bottom-right"></div>
-        <p class="author">Maria Lopez, VP of Design at Monterey</p>
+        <img src="img/JK.jpg" alt="John Maynard Keynes" class="author-avatar">
+        <p class="author">
+            
+            John Maynard Keynes, Economist and Philosopher
+        </p>
     </div>
+    
 
-    <!-- Dark Hero Section -->
-    <section class="dark-hero">
-        <div class="container">
-            <div class="dark-hero-content">
-                <div class="text-content">
-                    <h2>Your Best Value Proposition</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="author-info">
-                        <div class="author-avatar"></div>
-                        <span>Shane Doe, Product Designer</span>
-                    </div>
-                </div>
-                <div class="image-placeholders">
-                    <div class="image-placeholder1"></div>
-                    <div class="image-placeholder2"></div>
+
+   <!-- Dark Hero Section -->
+   <section class="dark-hero">
+    <div class="container">
+        <div class="dark-hero-content">
+            <div class="text-content">
+                <h2>Investasi Jangka Panjang</h2>
+                <p>"Jangan pernah berinvestasi pada bisnis yang tidak Anda pahami. Kami lebih memilih untuk berinvestasi pada perusahaan-perusahaan hebat dengan harga wajar daripada perusahaan biasa dengan harga murah. 
+                    Kesabaran adalah kunci; pasar saham adalah alat untuk mentransfer uang dari yang tidak sabar ke yang sabar."</p>
+                <p>Pelajari prinsip-prinsip investasi jangka panjang dari Warren Buffett untuk membangun kekayaan yang berkelanjutan. Dengan pendekatan yang rasional dan disiplin, Anda dapat mencapai tujuan finansial Anda melalui strategi yang terbukti efektif selama puluhan tahun.</p>
+                
+
+                <div class="author-info">
+                    <img src="img/wb.png" alt="Warren Buffett" class="author-avatar">
+                    <span>Warren Buffett, Chairman & CEO of Berkshire Hathaway</span>
                 </div>
             </div>
+            <div class="image-placeholders">
+                <div class="image-placeholder1"></div>
+                <img src="img/wb.png" alt="Warren Buffett" class="image-placeholder2">
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Features Section -->
     <section class="features">
         <div class="container">
             <div class="features-header">
-                <h2>Your Best Value Proposition</h2>
-                <p>"If you don't try this app, you won't become the superhero you were meant to be"</p>
+                <h2>Alat Keuangan Kami</h2>
+                <p>Dapatkan wawasan dan strategi untuk mengelola keuangan Anda secara efektif.</p>
             </div>
             <div class="feature-cards">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <div class="icon-placeholder"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <line x1="2" y1="10" x2="22" y2="10" />
+                            <line x1="7" y1="15" x2="8" y2="15" />
+                            <line x1="11" y1="15" x2="12" y2="15" />
+                            <line x1="15" y1="15" x2="16" y2="15" />
+                        </svg>
                     </div>
-                    <h3>Special Feature</h3>
-                    <a href="#" class="see-more">See More ›</a>
+                    <h3>Budgeting yang Mudah</h3>
+                    <p>Pelajari cara menyusun anggaran dengan mudah dan menjaga pengeluaran agar tetap terkendali.</p>
+                    <a href="#" class="see-more">Pelajari Lebih Lanjut ›</a>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <div class="icon-placeholder"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
                     </div>
-                    <h3>Special Feature</h3>
-                    <a href="#" class="see-more">See More ›</a>
+                    <h3>Strategi Investasi</h3>
+                    <p>Pelajari cara berinvestasi dengan bijak untuk meningkatkan aset Anda di masa depan.</p>
+                    <a href="#" class="see-more">Pelajari Lebih Lanjut ›</a>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <div class="icon-placeholder"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                            <line x1="9" y1="9" x2="9.01" y2="9" />
+                            <line x1="15" y1="9" x2="15.01" y2="9" />
+                        </svg>
                     </div>
-                    <h3>Special Feature</h3>
-                    <a href="#" class="see-more">See More ›</a>
+                    <h3>Manajemen Utang</h3>
+                    <p>Temukan cara untuk mengelola utang dan menghindari kebangkrutan dengan tips yang mudah dipahami.</p>
+                    <a href="#" class="see-more">Pelajari Lebih Lanjut ›</a>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <div class="icon-placeholder"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
                     </div>
-                    <h3>Special Feature</h3>
-                    <a href="#" class="see-more">See More ›</a>
+                    <h3>Membangun Tujuan Finansial</h3>
+                    <p>Pelajari bagaimana merencanakan dan mencapai tujuan finansial Anda, mulai dari membeli rumah hingga pensiun.</p>
+                    <a href="#" class="see-more">Pelajari Lebih Lanjut ›</a>
                 </div>
             </div>
         </div>
@@ -140,61 +224,50 @@
     <!-- Feature Split Section -->
     <section class="feature-split">
         <div class="feature-image">
-            <div class="image-box"></div>
+            <img src="img/financial-goal.jpg" alt="Financial Goals" class="image-box">
         </div>
         <div class="feature-text">
-            <h2>Feature that is amazing</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            <button class="btn-outline">Learn More</button>
+            <h2>Tujuan Finansial yang Menakjubkan</h2>
+            <p>Pelajari bagaimana merencanakan dan mencapai tujuan finansial Anda. Mulailah perjalanan Anda menuju kebebasan finansial dengan tips praktis yang telah terbukti efektif selama bertahun-tahun.</p>
+            <button class="btn-outline">Pelajari Lebih Lanjut</button>
         </div>
     </section>
+    
 
     <!-- CTA Form Section -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-form">
-                <h2>Try the product out for free.</h2>
+                <h2>Mulai Perjalanan Keuangan Anda Hari Ini</h2>
                 <form id="signup-form">
-                    <input type="email" placeholder="email" required>
-                    <input type="password" placeholder="password" required>
-                    <button type="submit" class="btn-primary">Start free trial</button>
+                    <input type="email" placeholder="Masukkan email Anda untuk mendapatkan tips keuangan gratis" required>
+                    <button type="submit" class="btn-primary">Berlangganan Sekarang</button>
                 </form>
             </div>
         </div>
     </section>
+    
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="geometric-footer">
-            <div class="circle-footer-left"></div>
-            <div class="triangle-footer-left"></div>
-            <div class="circle-footer-right"></div>
-            <div class="triangle-footer-right"></div>
-            <div class="square-footer"></div>
-        </div>
         <div class="container">
-            <div class="brand">TRADE</div>
+            <div class="brand">FinanceEdu</div>
             <div class="footer-links">
-                <a href="#">Product</a>
-                <a href="#">Features</a>
-                <a href="#">Resources</a>
-                <a href="#">About</a>
+                <a href="#">Tips Penganggaran</a>
+                <a href="#">Panduan Investasi</a>
+                <a href="#">Perencanaan Keuangan</a>
+                <a href="#">Tentang Kami</a>
                 <a href="#">Blog</a>
-                <a href="#">Support</a>
             </div>
             <div class="social-icons">
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
+                <!-- Ikon media sosial untuk komunitas finansial -->
             </div>
             <div class="copyright">
-                <p>© 2010 — 2020 <a href="#">Privacy</a> — <a href="#">Terms</a></p>
+                <p>© 2025 FinanceEdu — <a href="#">Privasi</a> — <a href="#">Ketentuan</a></p>
             </div>
         </div>
     </footer>
+    
 
     <script src="script.js"></script>
     <script src="grid.js"></script>
